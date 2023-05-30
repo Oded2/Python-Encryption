@@ -13,12 +13,14 @@ def hash(string):
 def shift(letter, num):
     isCap = letter.isupper()
     position = az_map[letter.lower()]
+    position = isMax(position, 26)
     for i in az_map:
         if az_map[i] == position + num:
             if (isCap):
                 return i.upper()
             else:
                 return i.lower()
+
     return "Error"
 
 
@@ -44,6 +46,6 @@ def encrypt(string, code):
     return final
 
 
-a = encrypt("ab", 24)
+a = encrypt("abcdefghijklmnopqrstuvwxyz", 24)
 
 print("Encrypted: " + a)
