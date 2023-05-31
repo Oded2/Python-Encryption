@@ -20,7 +20,7 @@ def shiftUp(letter, num):
 
     for i in az_map:
 
-        if az_map[i] == isMax(position + num, 26):
+        if az_map[i] == (position+num) % 26:
             if (isCap):
                 return i.upper()
             else:
@@ -36,7 +36,7 @@ def shiftDown(letter, num):
 
     for i in az_map:
 
-        if az_map[i] == isMin(position-num, 26):
+        if az_map[i] == (position-num) % 26:
             if (isCap):
                 return i.upper()
             else:
@@ -45,43 +45,13 @@ def shiftDown(letter, num):
     return "Error"
 
 
-def isMax(num, max_num):
-
-    final = 0
-    for i in range(num):
-        final += 1
-        if final >= max_num:
-            final = 0
-    return final
-
-
-def isMin(num, max_num):
-
-    final = 0
-    if (num > 0):
-        for i in range(num):
-            final += 1
-            if final >= max_num:
-                final = 0
-        return final
-    else:
-        final = max_num
-        for i in range(max_num):
-            final -= 1
-            if (final == 0):
-                final = max_num
-
-        return final
-
-
 def encrypt(string, code):
     string = str(string)
     a = str(code)
     final = ''
     for i in range(len(string)):
         current_letter = string[i]
-        current_index = isMax(i, len(a))
-
+        current_index = i % len(a)
         current_num = int(a[current_index])
         final += shiftUp(current_letter, current_num)
     return final
@@ -93,14 +63,15 @@ def decrypt(string, code):
     final = ''
     for i in range(len(string)):
         current_letter = string[i]
-        current_index = isMax(i, len(a))
+        current_index = i % len(a)
 
         current_num = int(a[current_index])
         final += shiftDown(current_letter, current_num)
     return final
 
 
-a = encrypt("abcdefghijklmnopqrstuvwxyz", 1)
+code = 123456789
+a = encrypt("abcdefghijklmnopqrstuvwxyz", code)
 print(f"a: {a}")
-b = decrypt(a, 1)
+b = decrypt(a, code)
 print(f"b: {b}")
