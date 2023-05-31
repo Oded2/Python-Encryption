@@ -5,8 +5,13 @@ az_map = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8
 def hash(string):
     final = 0
     for i in string:
-        final += az_map[i.lower()] + 1
-
+        i = str(i)
+        if i.isalpha():
+            final += az_map[i.lower()] + 1
+        elif i.isnumeric():
+            final += int(i)
+        else:
+            final += 1
     return final
 
 
