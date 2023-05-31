@@ -19,7 +19,7 @@ def shiftUp(letter, num):
         for i in az_map:
 
             if az_map[i] == (position+num) % 26:
-                if (isCap):
+                if isCap:
                     return i.upper()
                 else:
                     return i.lower()
@@ -37,7 +37,7 @@ def shiftDown(letter, num):
         for i in az_map:
 
             if az_map[i] == (position-num) % 26:
-                if (isCap):
+                if isCap:
                     return i.upper()
                 else:
                     return i.lower()
