@@ -11,33 +11,38 @@ def hash(string):
 
 
 def shiftUp(letter, num):
-    isCap = letter.isupper()
-    position = az_map[letter.lower()]
 
-    for i in az_map:
+    if letter.isalpha():
+        isCap = letter.isupper()
+        position = az_map[letter.lower()]
 
-        if az_map[i] == (position+num) % 26:
-            if (isCap):
-                return i.upper()
-            else:
-                return i.lower()
+        for i in az_map:
 
+            if az_map[i] == (position+num) % 26:
+                if (isCap):
+                    return i.upper()
+                else:
+                    return i.lower()
+    else:
+        return letter
     return "Error"
 
 
 def shiftDown(letter, num):
 
-    isCap = letter.isupper()
-    position = az_map[letter.lower()]
+    if letter.isalpha():
+        isCap = letter.isupper()
+        position = az_map[letter.lower()]
 
-    for i in az_map:
+        for i in az_map:
 
-        if az_map[i] == (position-num) % 26:
-            if (isCap):
-                return i.upper()
-            else:
-                return i.lower()
-
+            if az_map[i] == (position-num) % 26:
+                if (isCap):
+                    return i.upper()
+                else:
+                    return i.lower()
+    else:
+        return letter
     return "Error"
 
 
