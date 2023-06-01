@@ -1,5 +1,5 @@
 from tkinter import filedialog
-from secretKey import *
+from Assets.secretKey import *
 
 
 def eraseFile(filename):
@@ -9,7 +9,7 @@ def eraseFile(filename):
 
 file = filedialog.askopenfilename()
 if file:
-
+    print(file)
     encrypt_or_decrypt = input(
         "Would you like to encrypt or decrypt (E/D) ").lower()
     while True:
@@ -19,8 +19,7 @@ if file:
             encrypt_or_decrypt = input("Please enter either E or D ")
     password = input("What's the password? ")
     password = int(hash(password))
-    print(password)
-    print(file)
+
     with open(file, 'r') as f:
 
         content = f.read()
@@ -35,5 +34,7 @@ if file:
             new_content = decrypt(content, password)
             f.write(new_content)
             print("Done, your file has been decrypted")
+        input("Press ENTER to close")
+
 else:
     print("File not selected")
