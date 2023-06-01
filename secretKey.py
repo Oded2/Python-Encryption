@@ -74,14 +74,3 @@ def decrypt(string, code):
         current_num = int(a[current_index])
         final += shiftDown(current_letter, current_num)
     return final
-
-
-text = input("What's the text? ")
-code = hash(input("What's your password? "))
-print(f"Hash: {code}")
-encrypted = encrypt(text, code)
-print(f"Encrypted text: {encrypted}")
-code = hash(input("What's the password? "))
-print(f"Hash: {code}")
-decrypted = decrypt(encrypted, code)
-print(f"Decrypted text: {decrypted}")
