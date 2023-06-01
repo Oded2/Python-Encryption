@@ -7,7 +7,7 @@ def eraseFile(filename):
         f.write('')
 
 
-file = filedialog.askopenfilename()
+file = filedialog.askopenfilename(filetypes=[('Text Files', '*.txt')])
 if not file:
     print("No file selected")
     input("Press ENTER to exit ")
