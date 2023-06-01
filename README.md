@@ -19,6 +19,7 @@ This is the main encryption used in the main.py file.
 ***IMPORTANT***
 
 **This method is** ***NOT*** **a secure method for actual encryption or decryption. Use at your own risk**
+
 **Might make unexpected/unreversable changess**
 
 Contact me with any issues/reccomendations at odedconnect@gmail.com
