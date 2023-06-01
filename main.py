@@ -34,7 +34,7 @@ if file:
             new_content = decrypt(content, password)
             f.write(new_content)
             print("Done, your file has been decrypted")
-        input("Press ENTER to close")
+        input("Press ENTER to close ")
 
 else:
     print("File not selected")
