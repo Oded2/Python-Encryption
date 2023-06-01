@@ -2,7 +2,7 @@ az_map = {'a': 0, 'b': 1, 'c': 2, 'd': 3, 'e': 4, 'f': 5, 'g': 6, 'h': 7, 'i': 8
           'n': 13, 'o': 14, 'p': 15, 'q': 16, 'r': 17, 's': 18, 't': 19, 'u': 20, 'v': 21, 'w': 22, 'x': 23, 'y': 24, 'z': 25}
 
 charMap = {'!': 0, '@': 1, '#': 2, '$': 3, '%': 4,
-           '^': 5, '&': 6, '*': 7, '(': 8, ')': 9, ' ': 10, '.': 11, ',': 12, '[': 13, ']': 14, '|': 15, '/': 16, '\\': 17, '-': 18, '+': 19, '=': 20, '_': 21, '`': 22, '~': 23, '?': 24, '<': 25, '>': 26, '{': 27, '}': 28}
+           '^': 5, '&': 6, '*': 7, '(': 8, ')': 9, ' ': 10, '.': 11, ',': 12, '[': 13, ']': 14, '|': 15, '/': 16, '\\': 17, '-': 18, '+': 19, '=': 20, '_': 21, '`': 22, '~': 23, '?': 24, '<': 25, '>': 26, '{': 27, '}': 28, "'": 29, '"': 30, ';': 31, ':': 32}
 
 
 def hash(string):
@@ -27,7 +27,7 @@ def hash(string):
 
 def shiftUp(letter, num):
 
-    if letter.isalpha():
+    if letter.lower() in az_map:
         isCap = letter.isupper()
         position = az_map[letter.lower()]
 
@@ -51,7 +51,7 @@ def shiftUp(letter, num):
 
 def shiftDown(letter, num):
 
-    if letter.isalpha():
+    if letter.lower() in az_map:
         isCap = letter.isupper()
         position = az_map[letter.lower()]
 
