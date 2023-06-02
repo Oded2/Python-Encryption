@@ -9,14 +9,14 @@ if not file:
     exit()
 print(file)
 encrypt_or_decrypt = input(
-    "Would you like to encrypt or decrypt (E/D) ").lower()
+    "Would you like to encrypt or decrypt? (E/D) ").lower()
 while True:
     if encrypt_or_decrypt == "e" or encrypt_or_decrypt == "d":
         break
     else:
         encrypt_or_decrypt = input("Please enter either E or D ")
 password = input("What's the password? ")
-password = int(hash(password))
+password = hash(password)
 
 with open(file, 'r') as f:
 
