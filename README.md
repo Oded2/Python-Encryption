@@ -1,4 +1,4 @@
-# Python-Encryption
+# Python Encryption
 
 Welcome to Python Encryption.
 
