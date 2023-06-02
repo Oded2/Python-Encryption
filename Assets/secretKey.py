@@ -47,6 +47,10 @@ def shiftUp(letter, num):
         for i in charMap:
             if charMap[i] == (position + num) % length:
                 return i
+    elif letter.isnumeric():
+        numShift = (int(letter)+num) % 9
+        return str(numShift)
+
     else:
         return letter
     return "Error"
@@ -71,6 +75,9 @@ def shiftDown(letter, num):
         for i in charMap:
             if charMap[i] == (position - num) % length:
                 return i
+    elif letter.isnumeric():
+        numShift = (int(letter)-num) % 9
+        return str(numShift)
     else:
         return letter
     return "Error"
