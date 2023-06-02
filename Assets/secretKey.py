@@ -9,19 +9,20 @@ charMap = {'!': 0, '@': 1, '#': 2, '$': 3, '%': 4,
 
 def hash(string):
     final = 0
+
     for i in string:
-        multiplier = 1
+        multiplier = len(string)
         i = str(i)
         if i.isalpha():
             if i.isupper():
-                multiplier = 2
+                multiplier *= 2
 
             final += (az_map[i.lower()] + 1)*multiplier
 
         elif i.isnumeric():
-            final += int(i)
+            final += int(i) * multiplier
         elif i in charMap:
-            final += charMap[i]
+            final += charMap[i] * multiplier
         else:
             final += 1
     return final
