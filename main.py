@@ -2,11 +2,6 @@ from tkinter import filedialog
 from Assets.secretKey import *
 
 
-def eraseFile(filename):
-    with open(filename, 'w') as f:
-        f.write('')
-
-
 file = filedialog.askopenfilename(filetypes=[('Text Files', '*.txt')])
 if not file:
     print("No file selected")
@@ -27,7 +22,7 @@ with open(file, 'r') as f:
 
     content = f.read()
 
-eraseFile(file)
+
 with open(file, 'w') as f:
     if encrypt_or_decrypt == "e":
         new_content = encrypt(content, password)
