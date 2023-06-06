@@ -7,7 +7,7 @@ charMap = {'!': 0, '@': 1, '#': 2, '$': 3, '%': 4,
            "'": 29, '"': 30, ';': 31, ':': 32}
 
 
-def hash(string):
+def hashPass(string):
     final = 0
 
     for i in string:
@@ -26,6 +26,7 @@ def hash(string):
         else:
             final += 1
     return final
+
 
 
 def shiftUp(letter, num):

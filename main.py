@@ -16,7 +16,7 @@ while True:
     else:
         encrypt_or_decrypt = input("Please enter either E or D ")
 password = input("What's the password? ")
-password = hash(password)
+password = hashPass(password)
 
 with open(file, 'r') as f:
 
