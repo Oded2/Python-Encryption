@@ -107,3 +107,4 @@ def decrypt(string, code):
         current_num = int(a[current_index])
         final += shiftDown(current_letter, current_num)
     return final
+
