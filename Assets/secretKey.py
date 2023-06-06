@@ -28,7 +28,6 @@ def hashPass(string):
     return final
 
 
-
 def shiftUp(letter, num):
 
     if letter.lower() in az_map:
@@ -107,4 +106,3 @@ def decrypt(string, code):
         current_num = int(a[current_index])
         final += shiftDown(current_letter, current_num)
     return final
-
